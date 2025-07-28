@@ -151,6 +151,17 @@ function Test({ personalInfo }) {
 function EducationForm({ educationInfo, setEducationInfo }) {
   return( 
   <div className="" id="education-form-container">
+    <label htmlFor="school/university"> </label>
+    <input type="text" className="" id="schoolUniversity" maxLength={50} required></input>
+<label htmlFor="degree-name"></label>
+<input type="text" className="" id="degreeName" maxLength={50} required></input>
+<label htmlFor="start-date"></label>
+<input type="date" className="" id="startDate" required></input>
+<label htmlFor="end-date"></label>
+<input type="date" className="" id="endDate" required></input>
+<label htmlFor="location"></label>
+<input type="text" className=""id="location"  maxLength={40}required></input>
+
 <button type="button" className="" id="add-education-field"></button>
   </div>
 
