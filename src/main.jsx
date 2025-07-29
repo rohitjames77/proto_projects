@@ -6,7 +6,7 @@ import WelcomePage from './welcomePage.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <MainForm />
+    {/* <MainForm /> */}
     <WelcomePage />
   </StrictMode>,
 )
