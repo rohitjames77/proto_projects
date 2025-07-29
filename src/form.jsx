@@ -149,8 +149,30 @@ function Test({ personalInfo }) {
 }
 
 function EducationForm({ educationInfo, setEducationInfo }) {
+ 
+ const [addfield,setAddField]= useState(false);
+ 
+ const handleOnclick = function (){
+  setAddField(true);
+ }
+ 
+ if(addfield){
+<ExtraEducationField /> 
+setAddField(false);
+}
+ 
   return( 
   <div className="" id="education-form-container">
+    <ExtraEducationField/>
+    <button type="button" className="" id="add-education-field" onClick={handleOnclick}></button>
+  </div>
+
+  )}
+
+  
+  function ExtraEducationField (){
+return (
+  <div>
     <label htmlFor="school/university"> </label>
     <input type="text" className="" id="schoolUniversity" maxLength={50} required></input>
 <label htmlFor="degree-name"></label>
@@ -162,7 +184,6 @@ function EducationForm({ educationInfo, setEducationInfo }) {
 <label htmlFor="location"></label>
 <input type="text" className=""id="location"  maxLength={40}required></input>
 
-<button type="button" className="" id="add-education-field"></button>
   </div>
-
-  )}
+)
+  }
