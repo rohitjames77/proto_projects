@@ -2,7 +2,7 @@ import { useState } from "react";
 import  FormBackButton  from "./changeForm";
 import FormForwardButton from "./changeForm";
 export default function MainForm() {
-  const idArr = ["personalForm", "educationForm", "workexpForm", "summaryForm"];
+  const idArr = [ "Education", "Work experience", "Summary","Personal Details"];
   const [formId, setFormId] = useState(0);
   console.log(formId);
   const [personalInfo, setPersonalInfo] = useState({
