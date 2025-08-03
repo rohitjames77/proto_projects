@@ -1,6 +1,10 @@
 import { useState } from "react";
-
+import  FormBackButton  from "./changeForm";
+import FormForwardButton from "./changeForm";
 export default function MainForm() {
+  const idArr = [ "Education", "Work experience", "Summary","Personal Details"];
+  const [formId, setFormId] = useState(0);
+  console.log(formId);
   const [personalInfo, setPersonalInfo] = useState({
     jobTitle: "",
     firstName: "",
@@ -19,7 +23,7 @@ export default function MainForm() {
     city: "",
     startDate: "",
     endDate: "",
-    description: "",
+    location: "",
   });
 
   const [workExperience, setWorkexp] = useState({
@@ -38,6 +42,11 @@ export default function MainForm() {
         setPersonalInfo={setPersonalInfo}
       />
       <Test personalInfo={personalInfo} />
+      <FormForwardButton formId ={formId}
+      setFormId={setFormId}
+      idArr={idArr} />
+      {/* <FormBackButton formId ={formId}
+      setFormId={setFormId} /> */}
     </div>
   );
 }
@@ -149,9 +158,69 @@ function Test({ personalInfo }) {
 }
 
 function EducationForm({ educationInfo, setEducationInfo }) {
-  return( 
-  <div className="" id="education-form-container">
-<button type="button" className="" id="add-education-field"></button>
-  </div>
+  const [addfield, setAddField] = useState(false);
 
-  )}
+  const handleOnclick = function () {
+    setAddField(true);
+  };
+
+  if (addfield) {
+    <ExtraEducationField />;
+    setAddField(false);
+  }
+
+  return (
+    <div className="" id="education-form-container">
+      <ExtraEducationField />
+      <button
+        type="button"
+        className=""
+        id="add-education-field"
+        onClick={handleOnclick}
+      ></button>
+    </div>
+  );
+}
+
+function ExtraEducationField() {
+  return (
+    <div>
+      <label htmlFor="school"> </label>
+      <input
+        type="text"
+        className=""
+        id="school"
+        maxLength={50}
+        required
+      ></input>
+      <label htmlFor="university"> </label>
+      <input
+        type="text"
+        className=""
+        id="university"
+        maxLength={50}
+        required
+      ></input>
+      <label htmlFor="degree-name"></label>
+      <input
+        type="text"
+        className=""
+        id="degreeName"
+        maxLength={50}
+        required
+      ></input>
+      <label htmlFor="start-date"></label>
+      <input type="date" className="" id="startDate" required></input>
+      <label htmlFor="end-date"></label>
+      <input type="date" className="" id="endDate" required></input>
+      <label htmlFor="location"></label>
+      <input
+        type="text"
+        className=""
+        id="location"
+        maxLength={40}
+        required
+      ></input>
+    </div>
+  );
+}
