@@ -17,7 +17,7 @@ export default function FormForwardButton({ idArr, formId, setFormId }) {
           id="formForwardButton"
           className="bg-gradient-to-r from-blue-500 to-indigo-400 hover:bg-violet-600 focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700 "
           onClick={handleOnClick}
-          disabled={formId===idArr.length-1}
+          disabled={formId===idArr.length}
         >
           {"Next: " + buttonPlaceholder}
           
