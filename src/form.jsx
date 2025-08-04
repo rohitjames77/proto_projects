@@ -2,7 +2,7 @@ import { useState } from "react";
 import  FormBackButton  from "./changeForm";
 import FormForwardButton from "./changeForm";
 export default function MainForm() {
-  const idArr = [ "Education", "Work experience", "Summary","Personal Details"];
+  const idArr = [ "Education", "Work experience", "Summary"];
   const [formId, setFormId] = useState(0);
   console.log(formId);
   const [personalInfo, setPersonalInfo] = useState({
@@ -44,7 +44,9 @@ export default function MainForm() {
       <Test personalInfo={personalInfo} />
       <FormForwardButton formId ={formId}
       setFormId={setFormId}
-      idArr={idArr} />
+      idArr={idArr}
+    
+       />
       {/* <FormBackButton formId ={formId}
       setFormId={setFormId} /> */}
     </div>
