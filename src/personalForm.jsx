@@ -9,17 +9,6 @@ export default function PersonalForm({ personalInfo, setPersonalInfo }) {
   return (
     <div className="" id="personal-form-container">
       <form className="" id="personal-form">
-        <label htmlFor="job-title">Job Title</label>
-        <input
-          type="text"
-          maxLength={50}
-          className=""
-          id="jobTitle"
-          value={personalInfo.jobTitle}
-          onChange={handleOnChange}
-          required
-        />
-
         <label htmlFor="first-name">First Name</label>
         <input
           type="text"

@@ -19,8 +19,10 @@ export default function EducationForm({
   };
 
   const handleOnclick = function () {
-    setClickStatus(true)
-    if (clickstatus){
+    setClickStatus(!clickstatus)
+    console.log(clickstatus);
+    
+    if (!clickstatus){
     setEducationInfo(
       Object.defineProperties(educationInfo, {
         school2: { value: "" },
@@ -40,106 +42,114 @@ export default function EducationForm({
       })
     );
     console.log(educationInfo);
-    
-    // return (
-    //   <div className="" id="education-form-container">
-    //     <label htmlFor="school" className="text-gray-800">
-    //       School
-    //     </label>
-    //     <input
-    //       type="text"
-    //       className="bg-gray-400 text-gray-800"
-    //       id="school"
-    //       value={educationInfo.school}
-    //       maxLength={50}
-    //       onChange={handleOnChange}
-    //       required
-    //     ></input>
-    //     <label htmlFor="university" className="text-gray-800">
-    //       University
-    //     </label>
-    //     <input
-    //       type="text"
-    //       className="bg-gray-400 text-gray-800"
-    //       id="university"
-    //       value={educationInfo.university}
-    //       maxLength={50}
-    //       onChange={handleOnChange}
-    //       required
-    //     ></input>
-    //     <label htmlFor="degree-name" className="text-gray-800">
-    //       Degree
-    //     </label>
-    //     <input
-    //       type="text"
-    //       className="bg-gray-400 text-gray-800"
-    //       id="degreeName"
-    //       value={educationInfo.degree}
-    //       maxLength={50}
-    //       onChange={handleOnChange}
-    //       required
-    //     ></input>
-    //     <label htmlFor="start-date" className="text-gray-800">
-    //       Start Date
-    //     </label>
-    //     <input
-    //       type="date"
-    //       className="bg-gray-200"
-    //       id="startDate"
-    //       value={educationInfo.startDate}
-    //       onChange={handleOnChange}
-    //       required
-    //     ></input>
-    //     <label htmlFor="end-date" className="text-gray-800">
-    //       End Date
-    //     </label>
-    //     <input
-    //       type="date"
-    //       className="bg-gray-200"
-    //       id="endDate"
-    //       value={educationInfo.endDate}
-    //       onChange={handleOnChange}
-    //       required
-    //     ></input>
-    //     <label htmlFor="location" className="text-gray-800">
-    //       Location
-    //     </label>
-    //     <input
-    //       type="text"
-    //       className="bg-gray-200"
-    //       id="location"
-    //       value={educationInfo.location}
-    //       maxLength={40}
-    //       onChange={handleOnChange}
-    //       required
-    //     ></input>
-    //     <button
-    //       type="button"
-    //       className=""
-    //       id="add-education-field"
-    //       onClick={handleOnclick}
-    //     >
-    //       Extra
-    //     </button>
 
-    //     <FormForwardButton
-    //       formId={formId}
-    //       setFormId={setFormId}
-    //       idArr={idArr}
-    //     />
-    //     <ExtraEducationField2
-    //       educationInfo={educationInfo}
-    //       setEducationInfo={setEducationInfo}
-    //     />
-    //     <ExtraEducationField3
-    //       educationInfo={educationInfo}
-    //       setEducationInfo={setEducationInfo}
-    //     />
-    //   </div>
-    //  )
+        
+    // 
     }
     
     };
+
+    if (clickstatus){
+      return (
+      <div className="" id="education-form-container">
+        <label htmlFor="school" className="text-gray-800">
+          School
+        </label>
+        <input
+          type="text"
+          className="bg-gray-400 text-gray-800"
+          id="school"
+          value={educationInfo.school}
+          maxLength={50}
+          onChange={handleOnChange}
+          required
+        ></input>
+        <label htmlFor="university" className="text-gray-800">
+          University
+        </label>
+        <input
+          type="text"
+          className="bg-gray-400 text-gray-800"
+          id="university"
+          value={educationInfo.university}
+          maxLength={50}
+          onChange={handleOnChange}
+          required
+        ></input>
+        <label htmlFor="degree-name" className="text-gray-800">
+          Degree
+        </label>
+        <input
+          type="text"
+          className="bg-gray-400 text-gray-800"
+          id="degreeName"
+          value={educationInfo.degree}
+          maxLength={50}
+          onChange={handleOnChange}
+          required
+        ></input>
+        <label htmlFor="start-date" className="text-gray-800">
+          Start Date
+        </label>
+        <input
+          type="date"
+          className="bg-gray-200"
+          id="startDate"
+          value={educationInfo.startDate}
+          onChange={handleOnChange}
+          required
+        ></input>
+        <label htmlFor="end-date" className="text-gray-800">
+          End Date
+        </label>
+        <input
+          type="date"
+          className="bg-gray-200"
+          id="endDate"
+          value={educationInfo.endDate}
+          onChange={handleOnChange}
+          required
+        ></input>
+        <label htmlFor="location" className="text-gray-800">
+          Location
+        </label>
+        <input
+          type="text"
+          className="bg-gray-200"
+          id="location"
+          value={educationInfo.location}
+          maxLength={40}
+          onChange={handleOnChange}
+          required
+        ></input>
+        <button
+          type="button"
+          className=""
+          id="add-education-field"
+          onClick={handleOnclick}
+        >{clickstatus?"Back":"Extra"}
+        </button>
+
+        <FormForwardButton
+          formId={formId}
+          setFormId={setFormId}
+          idArr={idArr}
+        />
+        <ExtraEducationField2
+          educationInfo={educationInfo}
+          setEducationInfo={setEducationInfo}
+        />
+        <ExtraEducationField3
+          educationInfo={educationInfo}
+          setEducationInfo={setEducationInfo}
+        />
+      </div>
+     )
+    }
+
+console.log(educationInfo.school2);
+
+
 
   return (
     <div className="" id="education-form-container">

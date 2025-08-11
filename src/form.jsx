@@ -2,7 +2,6 @@ import { useState } from "react";
 import FormForwardButton from "./changeForm";
 import PersonalForm from "./personalForm";
 import EducationForm from "./educationForm";
-import workExperienceForm from "./workExperienceForm";
 import WorkExperienceForm from "./workExperienceForm";
 
 export default function MainForm() {
@@ -10,7 +9,6 @@ export default function MainForm() {
   const [formId, setFormId] = useState(0);
   console.log(formId);
   const [personalInfo, setPersonalInfo] = useState({
-    jobTitle: "",
     firstName: "",
     lastName: "",
     email: "",
@@ -24,6 +22,7 @@ export default function MainForm() {
     school: "",
     degree: "",
     university: "",
+    university2: "",
     city: "",
     startDate: "",
     endDate: "",
@@ -37,8 +36,9 @@ export default function MainForm() {
     startDate: "",
     endDate: "",
     city: "",
-    description:"",
+    description: "",
   });
+  console.log(workExperience);
 
   const [summary, setSummary] = useState("");
 
@@ -60,33 +60,62 @@ export default function MainForm() {
   if (formId === 2) {
     return (
       <>
-        <WorkExperienceForm
-          workExperience={workExperience}
-          setWorkexp={setWorkexp}
-        />
+       <WorkExperienceForm
+        personalInfo={personalInfo}
+        setPersonalInfo={setPersonalInfo}
+        idArr={idArr}
+        workExperience={workExperience}
+        setWorkexp={setWorkexp}
+        educationInfo={educationInfo}
+      />
       </>
     );
   }
+
+
   return (
     <div>
-      <PersonalForm
+      {/* <PersonalForm
         personalInfo={personalInfo}
         setPersonalInfo={setPersonalInfo}
+      /> */}
+      <EducationForm
+        personalInfo={personalInfo}
+        formId={formId}
+        setFormId={setFormId}
+        idArr={idArr}
+        educationInfo={educationInfo}
+        setEducationInfo={setEducationInfo}
       />
-      <Test personalInfo={personalInfo} educationInfo={educationInfo} />
+      <WorkExperienceForm
+        personalInfo={personalInfo}
+        setPersonalInfo={setPersonalInfo}
+        idArr={idArr}
+        workExperience={workExperience}
+        setWorkexp={setWorkexp}
+        educationInfo={educationInfo}
+      />
+      {/* <Test
+        personalInfo={personalInfo}
+        educationInfo={educationInfo}
+        workExperience={workExperience}
+      /> */}
       <FormForwardButton formId={formId} setFormId={setFormId} idArr={idArr} />
     </div>
   );
 }
 
 // Remove this component after use ................................
-function Test({ personalInfo, educationInfo }) {
+export function Test({ personalInfo, educationInfo, workExperience}) {
+  console.log(personalInfo.firstName);
+
   return (
     <>
       <h1 className="text-green-500">
-        Personal details: {personalInfo.jobTitle}
+        Personal details: {personalInfo.firstName}
       </h1>
       <h1 className="text-red-400">Education details:{educationInfo.school}</h1>
+     <h1 className="text-blue-500">Experience:{workExperience.jobTitle}</h1>
     </>
   );
 }
