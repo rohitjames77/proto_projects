@@ -3,11 +3,15 @@ import FormForwardButton from "./changeForm";
 import PersonalForm from "./personalForm";
 import EducationForm from "./educationForm";
 import WorkExperienceForm from "./workExperienceForm";
+import SummaryForm from "./summary";
 
-export default function MainForm() {
-  const idArr = ["Education", "Work experience", "Summary", "Save"];
-  const [formId, setFormId] = useState(0);
-  console.log(formId);
+
+
+
+export default function MainForm({formId, setFormId}) {
+  
+  
+  
   const [personalInfo, setPersonalInfo] = useState({
     firstName: "",
     lastName: "",
@@ -22,13 +26,13 @@ export default function MainForm() {
     school: "",
     degree: "",
     university: "",
-    university2: "",
     city: "",
     startDate: "",
     endDate: "",
     location: "",
   });
-  console.log(educationInfo);
+console.log(educationInfo);
+
 
   const [workExperience, setWorkexp] = useState({
     jobTitle: "",
@@ -38,69 +42,59 @@ export default function MainForm() {
     city: "",
     description: "",
   });
-  console.log(workExperience);
+
 
   const [summary, setSummary] = useState("");
+console.log('formId in Form: '+formId);
 
-  if (formId === 1) {
+  if (formId === 1 ) {
     return (
-      <>
+  
         <EducationForm
           personalInfo={personalInfo}
           formId={formId}
           setFormId={setFormId}
-          idArr={idArr}
           educationInfo={educationInfo}
           setEducationInfo={setEducationInfo}
         />
-      </>
+      
     );
   }
 
-  if (formId === 2) {
+  if (formId ===2 ) {
     return (
-      <>
+  
        <WorkExperienceForm
         personalInfo={personalInfo}
         setPersonalInfo={setPersonalInfo}
-        idArr={idArr}
         workExperience={workExperience}
         setWorkexp={setWorkexp}
-        educationInfo={educationInfo}
+       
       />
-      </>
+    
     );
+    
+  }
+
+  if(formId ===3 ){
+    return (
+      <SummaryForm summary ={summary} setSummary={setSummary} />
+    )
   }
 
 
+
+  console.log("formId is :" ,formId>1);
+
+
   return (
-    <div>
-      {/* <PersonalForm
+    <div className="flex flex-col" id="personal-form-container">
+      <PersonalForm
         personalInfo={personalInfo}
         setPersonalInfo={setPersonalInfo}
-      /> */}
-      <EducationForm
-        personalInfo={personalInfo}
-        formId={formId}
-        setFormId={setFormId}
-        idArr={idArr}
-        educationInfo={educationInfo}
-        setEducationInfo={setEducationInfo}
       />
-      <WorkExperienceForm
-        personalInfo={personalInfo}
-        setPersonalInfo={setPersonalInfo}
-        idArr={idArr}
-        workExperience={workExperience}
-        setWorkexp={setWorkexp}
-        educationInfo={educationInfo}
-      />
-      {/* <Test
-        personalInfo={personalInfo}
-        educationInfo={educationInfo}
-        workExperience={workExperience}
-      /> */}
-      <FormForwardButton formId={formId} setFormId={setFormId} idArr={idArr} />
+    <div id="button-container">
+    </div>
     </div>
   );
 }

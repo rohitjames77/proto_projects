@@ -41,13 +41,10 @@ export default function EducationForm({
         degree3: { value: "" },
       })
     );
-    console.log(educationInfo);
-
-        
-    // 
-    }
-    
-    };
+  }
+  
+};
+console.log('educationInfo:'+ educationInfo);
 
     if (clickstatus){
       return (
@@ -147,12 +144,9 @@ export default function EducationForm({
      )
     }
 
-console.log(educationInfo.school2);
-
-
-
   return (
-    <div className="" id="education-form-container">
+    <div className="bg-gray-50 w-full h-[90vh] border-3 border-solid border-black-500 text-black text-2xl flex flex-col" id="education-parent-container">
+     <div id="education-form-container">
       <label htmlFor="school" className="text-gray-50">
         School
       </label>
@@ -231,8 +225,10 @@ console.log(educationInfo.school2);
       >
         Extra
       </button>
-
-      <FormForwardButton formId={formId} setFormId={setFormId} idArr={idArr} />
+      </div>
+      <div id="button-container" className="flex flex-row absolute inset-x-0 bottom-0 w-1/2 h-auto items-stretch">
+      
+    </div>
     </div>
   );
 }

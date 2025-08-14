@@ -7,7 +7,7 @@ export default function PersonalForm({ personalInfo, setPersonalInfo }) {
   };
 
   return (
-    <div className="" id="personal-form-container">
+    <div className="bg-gray-400 w-full h-[90vh] border-3 border-solid border-black-500 text-black text-2xl " id="personal-form-container ">
       <form className="" id="personal-form">
         <label htmlFor="first-name">First Name</label>
         <input
