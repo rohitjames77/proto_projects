@@ -48,7 +48,7 @@ console.log('educationInfo:'+ educationInfo);
 
     if (clickstatus){
       return (
-      <div className="" id="education-form-container">
+      <div className="bg-gray-100 w-full h-[80vh] text-gray-400 text-2xl rounded-r-lg" id="education-form-container">
         <label htmlFor="school" className="text-gray-800">
           School
         </label>
@@ -127,11 +127,6 @@ console.log('educationInfo:'+ educationInfo);
         >{clickstatus?"Back":"Extra"}
         </button>
 
-        <FormForwardButton
-          formId={formId}
-          setFormId={setFormId}
-          idArr={idArr}
-        />
         <ExtraEducationField2
           educationInfo={educationInfo}
           setEducationInfo={setEducationInfo}
@@ -145,7 +140,7 @@ console.log('educationInfo:'+ educationInfo);
     }
 
   return (
-    <div className="bg-gray-50 w-full h-[90vh] border-3 border-solid border-black-500 text-black text-2xl flex flex-col" id="education-parent-container">
+    <div className="bg-gray-100 w-full h-[80vh] text-gray-400 text-2xl rounded-r-lg flex flex-col" id="education-parent-container">
      <div id="education-form-container">
       <label htmlFor="school" className="text-gray-50">
         School

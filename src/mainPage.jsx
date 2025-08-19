@@ -41,8 +41,8 @@ export default function MainPage() {
   const [summary, setSummary] = useState("");
 
   return (
-    <div id="main-page-container" className=" h-screen w-screen flex flex-row ">
-      <div id="progess-form-container" className="flex flex-col h-screen w-1/2">
+    <div id="main-page-container" className="bg-indigo-300 h-screen w-screen flex flex-row border-none  ">
+      <div id="progess-form-container" className="  flex flex-col h-screen w-1/2 gap-3 pt-2">
         <ProgressBar
           personalInfo={personalInfo}
           educationInfo={educationInfo}
@@ -67,7 +67,10 @@ export default function MainPage() {
           idArr={idArr}
         />
       </div>
-      <ShowCasePage />
+      <ShowCasePage personalInfo={personalInfo}
+          educationInfo={educationInfo}
+          workExperience={workExperience}
+          summary={summary} />
     </div>
   );
 }
