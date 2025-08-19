@@ -1,5 +1,4 @@
 import { useState } from "react";
-import FormForwardButton from "./changeForm";
 import ExtraExperienceForm2 from "./extraWorkExp2";
 import ExtraExperienceForm3 from "./extraWorkExp3";
 
@@ -11,15 +10,15 @@ export default function WorkExperienceForm({
   setFormId,
 }) {
   const [clickstatus, setClickStatus] = useState(false);
-
+  
   const handleOnChange = function (event) {
     const { id, value } = event.target;
     setWorkexp({ ...workExperience, [id]: value });
   };
-
+  
   const handleOnClick = function () {
     setClickStatus(!clickstatus);
-    console.log(clickstatus);
+    console.log('Click status :'+clickstatus);
 
     if (!clickstatus) {
       setWorkexp(
@@ -38,7 +37,7 @@ export default function WorkExperienceForm({
           description3: { value: "" },
         })
       );
-      console.log(workExperience);
+      console.log('work experience :'+workExperience);
     }
   };
 
@@ -54,7 +53,7 @@ export default function WorkExperienceForm({
             maxLength={40}
             id="jobTitle"
             className=""
-            value={workExperience.jobTitle2}
+            value={workExperience.jobTitle}
             onChange={handleOnChange}
             required
           ></input>
@@ -66,7 +65,7 @@ export default function WorkExperienceForm({
             type="text"
             id="employer"
             className=""
-            value={workExperience.employer2}
+            value={workExperience.employer}
             onChange={handleOnChange}
             required
           ></input>
@@ -77,7 +76,7 @@ export default function WorkExperienceForm({
             type="date"
             id="startDate"
             className=""
-            value={workExperience.startDate2}
+            value={workExperience.startDate}
             onChange={handleOnChange}
             required
           ></input>
@@ -88,7 +87,7 @@ export default function WorkExperienceForm({
             type="date"
             id="endDate"
             className=""
-            value={workExperience.endDate2}
+            value={workExperience.endDate}
             onChange={handleOnChange}
             required
           ></input>
@@ -97,7 +96,7 @@ export default function WorkExperienceForm({
             type="text"
             id="city"
             className=""
-            value={workExperience.city2}
+            value={workExperience.city}
             onChange={handleOnChange}
           ></input>
           <label htmlFor="description">Description </label>
@@ -105,7 +104,7 @@ export default function WorkExperienceForm({
             type="text"
             id="description"
             className=""
-            value={workExperience.description2}
+            value={workExperience.description}
             onChange={handleOnChange}
           ></input>
 
@@ -126,18 +125,14 @@ export default function WorkExperienceForm({
             setWorkexp={setWorkexp}
           />
 
-          <FormForwardButton
-            formId={formId}
-            setFormId={setFormId}
-            idArr={idArr}
-          />
+         
         </div>
       </div>
     );
   }
 
   return (
-    <div id="experience-form-container">
+    <div id="experience-form-container" className="bg-gray-100 w-full h-[80vh] text-gray-400 text-2xl rounded-r-lg">
       <div id="extraExperienceForm" className="">
         <label htmlFor="" className="">
           Job Title
@@ -145,9 +140,9 @@ export default function WorkExperienceForm({
         <input
           type="text"
           maxLength={40}
-          id="jobTitle2"
+          id="jobTitle"
           className=""
-          value={workExperience.jobTitle2}
+          value={workExperience.jobTitle}
           onChange={handleOnChange}
           required
         ></input>
@@ -157,9 +152,9 @@ export default function WorkExperienceForm({
         </label>
         <input
           type="text"
-          id="employer2"
+          id="employer"
           className=""
-          value={workExperience.employer2}
+          value={workExperience.employer}
           onChange={handleOnChange}
           required
         ></input>
@@ -168,9 +163,9 @@ export default function WorkExperienceForm({
         </label>
         <input
           type="date"
-          id="startDate2"
+          id="startDate"
           className=""
-          value={workExperience.startDate2}
+          value={workExperience.startDate}
           onChange={handleOnChange}
           required
         ></input>
@@ -179,26 +174,26 @@ export default function WorkExperienceForm({
         </label>
         <input
           type="date"
-          id="endDate2"
+          id="endDate"
           className=""
-          value={workExperience.endDate2}
+          value={workExperience.endDate}
           onChange={handleOnChange}
           required
         ></input>
         <label htmlFor="city">City </label>
         <input
           type="text"
-          id="city2"
+          id="city"
           className=""
-          value={workExperience.city2}
+          value={workExperience.city}
           onChange={handleOnChange}
         ></input>
         <label htmlFor="description">Description </label>
         <input
           type="text"
-          id="description2"
+          id="description"
           className=""
-          value={workExperience.description2}
+          value={workExperience.description}
           onChange={handleOnChange}
         ></input>
 
@@ -210,11 +205,6 @@ export default function WorkExperienceForm({
         >
           Add
         </button>
-      </div>
-      <div
-        id="button-container"
-        className="flex flex-row absolute inset-x-0 bottom-0 w-1/2 h-auto items-stretch"
-      >
       </div>
     </div>
   );
