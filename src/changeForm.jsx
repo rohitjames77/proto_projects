@@ -2,10 +2,8 @@ export default function FormForwardButton({ idArr, formId, setFormId }) {
   const handleOnClick = function () {
     setFormId((formId) => formId + 1);
     
-    console.log("after click: " + formId);
-    console.log(typeof formId);
   };
-  console.log("before click: " + formId);
+  
   
    const buttonPlaceholder = idArr[formId];
   const handlePrevOnClick = function () {

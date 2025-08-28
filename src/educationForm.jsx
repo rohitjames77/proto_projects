@@ -17,7 +17,7 @@ export default function EducationForm({
 
   const handleOnclick = function () {
     setAddEduFields(!addEduFields)
-    console.log(addEduFields);
+    
     
     if (!addEduFields){
     setEducationInfo(
@@ -41,7 +41,7 @@ export default function EducationForm({
   }
   
 };
-console.log('educationInfo:'+ educationInfo);
+
 
     if (addEduFields){
       return (

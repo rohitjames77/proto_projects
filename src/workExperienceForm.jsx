@@ -34,7 +34,7 @@ addWorkExp,
           description3: { value: "" },
         })
       );
-      console.log('work experience :'+workExperience);
+  
     }
   };
 

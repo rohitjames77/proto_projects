@@ -27,7 +27,7 @@ export default function MainPage() {
     endDate: "",
     location: "",
   });
-  console.log(educationInfo);
+  
 
   const [workExperience, setWorkexp] = useState({
     jobTitle: "",

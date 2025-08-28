@@ -4,7 +4,6 @@ export default function ShowcaseSummaryWorkExp({
   summary,
 }) {
 
-console.log('Summary in Showcase :' +summary);
 
   if (addWorkExp === true) {
     return (

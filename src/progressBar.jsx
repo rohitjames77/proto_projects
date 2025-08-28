@@ -6,13 +6,13 @@ export default function ProgressBar({
   educationInfo,
   workExperience,
 }) {
-  console.log(personalInfo);
+
    const formProgressPercentCalc = (stateObject) => {
     const nonEmptyVal = Object.values(stateObject).filter(
       (index) => index.trim() !== ""
     ).length;
     const formProgPercent = nonEmptyVal /Object.values(stateObject).length  *100
- console.log('formProPercent :' + formProgPercent);
+ 
  
     return formProgPercent ; 
   }
@@ -31,7 +31,7 @@ return unRoundedTotalProgress.toFixed(2);
 }
 
 const tester = totalProgressPercentCalc()
-console.log ('Total progress :' + tester);
+
 
 
   

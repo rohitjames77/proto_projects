@@ -9,7 +9,6 @@ export default function ShowcaseEducationPersonalInfo({
   educationInfo,
 }) {
 
-console.log('City Input in Showcase :'+personalInfo.city);
 
 
   if (addEduFields === true) {

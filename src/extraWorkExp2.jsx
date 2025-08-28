@@ -5,7 +5,7 @@ export default function ExtraExperienceForm2({ workExperience, setWorkexp }) {
     const { id, value } = event.target;
     setWorkexp({ ...workExperience, [id]: value });
   };
-  console.log(workExperience.jobTitle);
+  
 
   return (
     <div id="extraExperienceForm" className="grid grid-rows-6 grid-cols-4 gap-y-6 m-4 mt-[5%] border-b-4 border-gray-400 pb-8">
