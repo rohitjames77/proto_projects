@@ -36,7 +36,7 @@ console.log ('Total progress :' + tester);
 
   
   return (
-  <div id="" className="flex flex-col  items-center w-full h-[10vh] bg-gray-100 text-9x1 text-gray-900 rounded-r-lg font-[roboto] text-lg gap-x-2">
+  <div id="" className="flex flex-col  items-center w-full h-[10vh] bg-gray-100 text-9x1 text-gray-900 font-[roboto] text-lg gap-x-2">
     <div
     id="progress-bar"
     className=" flex flex-row  items-center w-full h-full bg-gray-100 text-9x1 text-gray-900 rounded-r-lg font-[roboto] text-lg gap-x-2"

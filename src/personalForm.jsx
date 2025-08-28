@@ -7,13 +7,13 @@ export default function PersonalForm({ personalInfo, setPersonalInfo }) {
   };
 
   return (
-    <div className="bg-gray-100 w-full h-[80vh] text-gray-400 text-xl rounded-r-lg " id="personal-form-container ">
-      <form className="grid grid-cols-2 gap-y-4" id="personal-form">
+    <div className="bg-gray-100 w-full h-[80vh] text-gray-400 text-xl" id="personal-form-container ">
+      <form className="grid grid-cols-2 gap-y-4 m-4" id="personal-form">
         <label htmlFor="first-name" className="font-[roboto] font-medium text-3xl">First Name</label>
         <input
           type="text"
           maxLength={30}
-          className="bg-slate-200 rounded-xl w-full text-gray-500"
+          className="bg-slate-200 rounded-xl w-full text-gray-500 row-start-1 col-start-2"
           id="firstName"
           value={personalInfo.firstName}
           onChange={handleOnChange}

@@ -4,7 +4,7 @@
 @tailwind utilities;
 @import "tailwindcss";
 @custom-variant hover (&:hover);
-
+@plugin 'tailwind-scrollbar';
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;

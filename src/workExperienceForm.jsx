@@ -1,15 +1,14 @@
-import { useState } from "react";
 import ExtraExperienceForm2 from "./extraWorkExp2";
 import ExtraExperienceForm3 from "./extraWorkExp3";
+import { RiFileAddLine } from "react-icons/ri";
 
 export default function WorkExperienceForm({
   workExperience,
   setWorkexp,
-  idArr,
-  formId,
-  setFormId,
+addWorkExp,
+  setAddWorkExp
 }) {
-  const [clickstatus, setClickStatus] = useState(false);
+  
   
   const handleOnChange = function (event) {
     const { id, value } = event.target;
@@ -17,10 +16,8 @@ export default function WorkExperienceForm({
   };
   
   const handleOnClick = function () {
-    setClickStatus(!clickstatus);
-    console.log('Click status :'+clickstatus);
-
-    if (!clickstatus) {
+    setAddWorkExp(!addWorkExp);
+    if (!addWorkExp) {
       setWorkexp(
         Object.defineProperties(workExperience, {
           jobTitle2: { value: "" },
@@ -41,82 +38,78 @@ export default function WorkExperienceForm({
     }
   };
 
-  if (clickstatus) {
+  if (addWorkExp) {
     return (
-      <div id="experience-form-container">
-        <div id="extraExperienceForm" className="">
-          <label htmlFor="" className="">
-            Job Title
-          </label>
-          <input
-            type="text"
-            maxLength={40}
-            id="jobTitle"
-            className=""
-            value={workExperience.jobTitle}
-            onChange={handleOnChange}
-            required
-          ></input>
+      <div id="experience-form-container" className="bg-gray-100 w-full h-[80vh] text-gray-400 text-2xl overflow-y-auto
+ scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar scrollbar-thumb-slate-700 scrollbar-track-slate-300 h-32
+ ">
+             <div id="extraExperienceForm" className="grid grid-rows-6 grid-cols-4 gap-y-6  mt-5 border-b-4 border-gray-400 pb-8 ">
+        <label htmlFor="" className="text-2xl font-[roboto] text-gray-800 row-start-1 col-start-1 col-end-2">
+          Job Title
+        </label>
+        <input
+          type="text"
+          maxLength={40}
+          id="jobTitle"
+          className="bg-gray-200 text-gray-800 rounded-xl row-start-1 col-start-2 col-end-5 items-end"
+          value={workExperience.jobTitle}
+          onChange={handleOnChange}
+          required
+        ></input>
 
-          <label htmlFor="Employer" className="">
-            Employer
-          </label>
-          <input
-            type="text"
-            id="employer"
-            className=""
-            value={workExperience.employer}
-            onChange={handleOnChange}
-            required
-          ></input>
-          <label htmlFor="startDate" className="">
-            Start Date
-          </label>
-          <input
-            type="date"
-            id="startDate"
-            className=""
-            value={workExperience.startDate}
-            onChange={handleOnChange}
-            required
-          ></input>
-          <label htmlFor="endDate" className="">
-            End Date
-          </label>
-          <input
-            type="date"
-            id="endDate"
-            className=""
-            value={workExperience.endDate}
-            onChange={handleOnChange}
-            required
-          ></input>
-          <label htmlFor="city">City </label>
-          <input
-            type="text"
-            id="city"
-            className=""
-            value={workExperience.city}
-            onChange={handleOnChange}
-          ></input>
-          <label htmlFor="description">Description </label>
-          <input
-            type="text"
-            id="description"
-            className=""
-            value={workExperience.description}
-            onChange={handleOnChange}
-          ></input>
-
-          <button
-            type="button"
-            className=""
-            id="add-work-exp"
-            onClick={handleOnClick}
-          >
-            {clickstatus ? "Back" : "ADD"}
-          </button>
-          <ExtraExperienceForm2
+        <label htmlFor="Employer" className="text-2xl font-[roboto] text-gray-800 row-start-2 col-start-1 col-end-2">
+          Employer
+        </label>
+        <input
+          type="text"
+          id="employer"
+          className="bg-gray-200 text-gray-800 rounded-xl row-start-2 col-start-2 col-end-5 items-end"
+          value={workExperience.employer}
+          onChange={handleOnChange}
+          required
+        ></input>
+        <label htmlFor="startDate" className="text-2xl font-[roboto] text-gray-800 row-start-3 col-start-1 col-end-2">
+          Start Date
+        </label>
+        <input
+          type="date"
+          id="startDate"
+          className="bg-gray-200 text-gray-800 rounded-xl row-start-3 col-start-2 col-end-5 items-end"
+          value={workExperience.startDate}
+          onChange={handleOnChange}
+          required
+        ></input>
+        <label htmlFor="endDate" className="text-2xl font-[roboto] text-gray-800 row-start-4 col-start-1 col-end-2">
+          End Date
+        </label>
+        <input
+          type="date"
+          id="endDate"
+          className="bg-gray-200 text-gray-800 rounded-xl row-start-4 col-start-2 col-end-5 items-end"
+          value={workExperience.endDate}
+          onChange={handleOnChange}
+          required
+        ></input>
+        <label htmlFor="city" className="text-2xl font-[roboto] text-gray-800 row-start-5 col-start-1 col-end-2">City </label>
+        <input
+          type="text"
+          id="city"
+          className="bg-gray-200 text-gray-800 rounded-xl row-start-5 col-start-2 col-end-5 items-end"
+          value={workExperience.city}
+          onChange={handleOnChange}
+        ></input>
+        <label htmlFor="description" className="text-2xl font-[roboto] text-gray-800 row-start-6 col-start-1 col-end-2">Description </label>
+        <input
+          type="text"
+          id="description"
+          className="bg-gray-200 text-gray-800 rounded-xl row-start-6 col-start-2 col-end-5 items-end"
+          value={workExperience.description}
+          onChange={handleOnChange}
+        ></input>
+            <RiFileAddLine className=" absolute top-[75%] h-[60px] w-[60px]  hover:fill-blue-500 fill-gray-600 shadow-md shadow-gray-400 hover:shadow-2xl focus: transform translate-y-4   "  id="add-education-field"
+        onClick={handleOnClick}/>
+        </div>
+       <ExtraExperienceForm2
             workExperience={workExperience}
             setWorkexp={setWorkexp}
           />
@@ -124,87 +117,82 @@ export default function WorkExperienceForm({
             workExperience={workExperience}
             setWorkexp={setWorkexp}
           />
-
-         
-        </div>
+      
       </div>
     );
   }
 
   return (
-    <div id="experience-form-container" className="bg-gray-100 w-full h-[80vh] text-gray-400 text-2xl rounded-r-lg">
-      <div id="extraExperienceForm" className="">
-        <label htmlFor="" className="">
+    <div id="experience-form-container" className="bg-gray-100 w-full h-[80vh] text-gray-400 text-2xl rounded-r-lg overflow-y-auto
+ scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar scrollbar-thumb-slate-700 scrollbar-track-slate-300 h-32
+ ">
+      <div id="extraExperienceForm" className="grid grid-rows-6 grid-cols-4 gap-y-6 m-4 ">
+        <label htmlFor="" className="text-2xl font-[roboto] text-gray-800 row-start-1 col-start-1 col-end-2">
           Job Title
         </label>
         <input
           type="text"
           maxLength={40}
           id="jobTitle"
-          className=""
+          className="bg-gray-200 text-gray-800 rounded-xl row-start-1 col-start-2 col-end-5 items-end"
           value={workExperience.jobTitle}
           onChange={handleOnChange}
           required
         ></input>
 
-        <label htmlFor="Employer" className="">
+        <label htmlFor="Employer" className="text-2xl font-[roboto] text-gray-800 row-start-2 col-start-1 col-end-2">
           Employer
         </label>
         <input
           type="text"
           id="employer"
-          className=""
+          className="bg-gray-200 text-gray-800 rounded-xl row-start-2 col-start-2 col-end-5 items-end"
           value={workExperience.employer}
           onChange={handleOnChange}
           required
         ></input>
-        <label htmlFor="startDate" className="">
+        <label htmlFor="startDate" className="text-2xl font-[roboto] text-gray-800 row-start-3 col-start-1 col-end-2">
           Start Date
         </label>
         <input
           type="date"
           id="startDate"
-          className=""
+          className="bg-gray-200 text-gray-800 rounded-xl row-start-3 col-start-2 col-end-5 items-end"
           value={workExperience.startDate}
           onChange={handleOnChange}
           required
         ></input>
-        <label htmlFor="endDate" className="">
+        <label htmlFor="endDate" className="text-2xl font-[roboto] text-gray-800 row-start-4 col-start-1 col-end-2">
           End Date
         </label>
         <input
           type="date"
           id="endDate"
-          className=""
+          className="bg-gray-200 text-gray-800 rounded-xl row-start-4 col-start-2 col-end-5 items-end"
           value={workExperience.endDate}
           onChange={handleOnChange}
           required
         ></input>
-        <label htmlFor="city">City </label>
+        <label htmlFor="city" className="text-2xl font-[roboto] text-gray-800 row-start-5 col-start-1 col-end-2">City </label>
         <input
           type="text"
           id="city"
-          className=""
+          className="bg-gray-200 text-gray-800 rounded-xl row-start-5 col-start-2 col-end-5 items-end"
           value={workExperience.city}
           onChange={handleOnChange}
         ></input>
-        <label htmlFor="description">Description </label>
+        <label htmlFor="description" className="text-2xl font-[roboto] text-gray-800 row-start-6 col-start-1 col-end-2">Description </label>
         <input
           type="text"
           id="description"
-          className=""
+          className="bg-gray-200 text-gray-800 rounded-xl row-start-6 col-start-2 col-end-5 items-end"
           value={workExperience.description}
           onChange={handleOnChange}
         ></input>
 
-        <button
-          type="button"
-          className=""
-          id="add-work-exp"
-          onClick={handleOnClick}
-        >
-          Add
-        </button>
+            <RiFileAddLine className=" absolute top-[75%] h-[60px] w-[60px]  hover:fill-blue-500 fill-gray-600 shadow-md shadow-gray-400 hover:shadow-2xl focus: transform translate-y-4   "  id="add-education-field"
+        onClick={handleOnClick}/>
+
       </div>
     </div>
   );
