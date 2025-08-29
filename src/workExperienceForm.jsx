@@ -74,7 +74,7 @@ addWorkExp,
         <input
           type="date"
           id="startDate"
-          className="bg-gray-200 text-gray-800 rounded-xl row-start-3 col-start-2 col-end-5 items-end"
+          className="bg-gray-200 text-gray-200 rounded-xl row-start-3 col-start-2 col-end-5 items-end"
           value={workExperience.startDate}
           onChange={handleOnChange}
           required
@@ -85,7 +85,7 @@ addWorkExp,
         <input
           type="date"
           id="endDate"
-          className="bg-gray-200 text-gray-800 rounded-xl row-start-4 col-start-2 col-end-5 items-end"
+          className="bg-gray-200 text-gray-200 rounded-xl row-start-4 col-start-2 col-end-5 items-end"
           value={workExperience.endDate}
           onChange={handleOnChange}
           required
